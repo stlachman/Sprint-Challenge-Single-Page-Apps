@@ -2,15 +2,23 @@ import React from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
-// TODO: Add missing tabs below
-// Take a look at React Semantic UI tabs
-// https://react.semantic-ui.com/modules/tab/
 export default function TabNav() {
-  const panes = [
-    { menuItem: "Home Page", render: () => <Tab.Pane>Home Page</Tab.Pane> },
-    { menuItem: "Characters", render: () => <Tab.Pane>Characters</Tab.Pane> },
-    { menuItem: "Locations", render: () => <Tab.Pane>Locations</Tab.Pane> },
-    { menuItem: "Episodes", render: () => <Tab.Pane>Episodes</Tab.Pane> }
-  ];
-  return <Tab panes={panes} />;
+  return (
+    <Menu>
+      <Menu.Item name="Home Page" as={NavLink} to="/">
+        Home Page
+      </Menu.Item>
+
+      <Menu.Item name="Characters" as={NavLink} to="/character">
+        Characters
+      </Menu.Item>
+
+      <Menu.Item name="locations" as={NavLink} to="/location">
+        Locations
+      </Menu.Item>
+      <Menu.Item name="Episodes" as={NavLink} to="/episode">
+        Episodes
+      </Menu.Item>
+    </Menu>
+  );
 }
